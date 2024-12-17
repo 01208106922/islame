@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
+import 'cache.dart';
 import 'home_page.dart';
 
 class OnboardScreen extends StatelessWidget {
-  static const String routeName="///";
+  static const String routeName="/onboard";
    OnboardScreen({super.key});
 
   Widget _buildImage(String assetName, [double width = 350]) {
@@ -12,6 +13,7 @@ class OnboardScreen extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
+    var size=MediaQuery.of(context).size;
     const bodyStyle = TextStyle(fontSize: 20,
         fontWeight: FontWeight.bold,
         color: Color(0xffE2BE7F));
@@ -20,16 +22,18 @@ class OnboardScreen extends StatelessWidget {
       titleTextStyle: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold,
       color: Color(0xffE2BE7F)),
       bodyTextStyle: bodyStyle,
-      bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
+      // bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
       pageColor: Color(0xff202020),
       imagePadding: EdgeInsets.zero,
       imageFlex: 3
     );
     return IntroductionScreen(
           globalHeader: Container(
+            padding: EdgeInsets.only(bottom: size.height*6),
             child: Image.asset("assets/images/pic9.png",
-              width: 291,
-              height: 171,),),
+              width: size.width*.5,
+              height: size.height*0.3,
+            fit: BoxFit.fill,),),
 
           dotsFlex: 2,
           dotsDecorator: DotsDecorator(
@@ -38,6 +42,7 @@ class OnboardScreen extends StatelessWidget {
           ),
           globalBackgroundColor:  Color(0xff202020),
           onDone: (){
+            Cache.saveEligibility();
             Navigator.pushReplacementNamed((context), HomePage.routeName);
           },
           showDoneButton: true,
@@ -83,3 +88,4 @@ class OnboardScreen extends StatelessWidget {
     );
   }
 }
+

@@ -2,12 +2,42 @@
 class Assets {
   Assets._();
 
-  static const String imagesPic5= 'assets/images/pic5.png';
+  static const String imagesBackground0 = 'assets/images/Background0.png';
+  static const String imagesBackground1 = 'assets/images/Background1.png';
+  static const String imagesBackground2 = 'assets/images/Background2.png';
+  static const String imagesBackground3 = 'assets/images/Background3.png';
+  static const String imagesBackground4 = 'assets/images/Background4.png';
+  static const String imagesFrame1 = 'assets/images/Frame1.png';
+  static const String imagesFrame2 = 'assets/images/Frame2.png';
+  static const String imagesFrame3 = 'assets/images/Frame3.png';
+  static const String imagesFrame4 = 'assets/images/Frame4.png';
+  static const String imagesFrame5 = 'assets/images/Frame5.png';
+  static const String imagesHadith1 = 'assets/images/hadith1.png';
+  static const String imagesHadith2 = 'assets/images/hadith2.png';
+  static const String imagesHome1 = 'assets/images/home1.png';
+  static const String imagesHome2 = 'assets/images/home2.png';
+  static const String imagesHome3 = 'assets/images/home3.png';
+  static const String imagesHome4 = 'assets/images/home4.png';
+  static const String imagesHome5 = 'assets/images/home5.png';
+  static const String imagesIcon1 = 'assets/images/icon1.png';
   static const String imagesPic1 = 'assets/images/pic1.png';
   static const String imagesPic2 = 'assets/images/pic2.png';
   static const String imagesPic3 = 'assets/images/pic3.png';
   static const String imagesPic4 = 'assets/images/pic4.png';
+  static const String imagesPic5 = 'assets/images/pic5.png';
   static const String imagesPic6 = 'assets/images/pic6.png';
   static const String imagesPic7 = 'assets/images/pic7.png';
+  static const String imagesPic8 = 'assets/images/pic8.png';
+  static const String imagesPic9 = 'assets/images/pic9.png';
+  static const String imagesRadio1 = 'assets/images/radio1.png';
+  static const String imagesRadio2 = 'assets/images/radio2.png';
+  static const String imagesRadio3 = 'assets/images/radio3.png';
+  static const String imagesRadio5 = 'assets/images/radio5.png';
+  static const String imagesRectangle1 = 'assets/images/Rectangle1.png';
+  static const String imagesSebha = 'assets/images/Sebha.png';
+  static const String imagesSuraNumber = 'assets/images/SuraNumber.png';
+  static const String imagesTime1 = 'assets/images/time1.png';
+  static const String imagesTime2 = 'assets/images/time2.png';
+  static const String imagesTime3 = 'assets/images/time3.png';
 
 }

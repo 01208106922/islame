@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 
+import 'cache.dart';
+import 'hadith_detailes.dart';
 import 'home_page.dart';
 import 'onboard_screen.dart';
 import 'splash_icon.dart';
 import 'splash_screen.dart';
 
-void main() {
-  runApp(const MyApp());
+void main()async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await Cache.init();
+    runApp(const MyApp());
+
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -15,14 +21,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: SplashScreen.routeName,
-        routes: {
-          SplashScreen.routeName : (context)=> SplashScreen(),
-          SplashIcon.routeName : (context)=> SplashIcon(),
-          OnboardScreen.routeName : (context)=> OnboardScreen(),
-          HomePage.routeName : (context)=> HomePage(),
+      initialRoute: Cache.getEligibility() == true?
+      HomePage.routeName :
+      SplashScreen.routeName
+      ,
+      routes: {
+        SplashScreen.routeName: (context) => SplashScreen(),
+        SplashIcon.routeName: (context) => SplashIcon(),
+        OnboardScreen.routeName: (context) => OnboardScreen(),
+        HomePage.routeName: (context) => HomePage(),
+        HadethDetailsScreen.routeName: (context) => HadethDetailsScreen(),
 
-        },
+      },
     );
   }
 }

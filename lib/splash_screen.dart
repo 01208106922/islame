@@ -1,11 +1,9 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-
 import 'splash_icon.dart';
 
 class SplashScreen extends StatefulWidget {
-  static const String routeName="/";
+  static const String routeName="/splashscreen";
   SplashScreen({super.key});
 
   @override
@@ -16,54 +14,64 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 10), () {
       Navigator.pushReplacementNamed((context), SplashIcon.routeName);
 
     });
   }
   Widget build(BuildContext context) {
+    var size=MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
           body: Stack(
             children: [
               Image.asset("assets/images/pic1.png",
-              width: 411.4,
-              height: 932,
+              width: double.infinity,
+              height: double.infinity,
               fit: BoxFit.cover,),
               Container(
-                padding: EdgeInsets.only(top: 57,left: 69),
+                padding: EdgeInsets.all(30),
                 child: Image.asset("assets/images/pic3.png",
-                  width: 291,),),
+                  width: size.width *20,),),
               Container(
-                padding: EdgeInsets.only(left: 329),
+                padding: EdgeInsets.only(left: size.width*.85),
                 child: Image.asset("assets/images/pic4.png",
-                  width: 88,
-                  height: 313,),),
+                  width: size.width * .8,
+                  height: size.height*.4,
+                fit: BoxFit.cover,),),
               Container(
-                padding: EdgeInsets.only(top: 214),
+                padding: EdgeInsets.only(top: size.width*.5),
                 child: Image.asset("assets/images/pic2.png",
-                  width: 87,
-                  height: 187,),),
+                  width: size.width*.2,
+                  height: size.width*.5,
+                fit: BoxFit.fill,),),
+              Center(
+                child: Container(
+                  child: Image.asset("assets/images/pic5.png",
+                    width: size.width*.3,
+                    height: size.height*.2,
+                  fit: BoxFit.cover,),),
+              ),
+              Center(
+                child: Container(
+                  padding: EdgeInsets.only(top:size.height*.15),
+                  child: Image.asset("assets/images/pic8.png",
+                    width: size.width*.2,
+                    height: size.height*.07,),),
+              ),
               Container(
-                padding: EdgeInsets.only(top: 341,left:127),
-                child: Image.asset("assets/images/pic5.png",
-                  width: 173.72,
-                  height: 154.86,),),
-              Container(
-                padding: EdgeInsets.only(top: 469,left:148),
-                child: Image.asset("assets/images/pic8.png",
-                  width: 133,
-                  height: 77,),),
-              Container(
-                padding: EdgeInsets.only(top: 500,left:329),
+                padding: EdgeInsets.only(top: size.height*.5,left: size.width*.8),
                 child: Image.asset("assets/images/pic7.png",
-                  width: 101,
-                  height: 216,),),
-              Container(
-                padding: EdgeInsets.only(top: 700,left:93),
-                child: Image.asset("assets/images/pic6.png",
-                  width: 244,
-                  height: 108,),),
+                  width: size.width*.2,
+                  height: size.width*.5,
+                  fit: BoxFit.fill,),),
+              Center(
+                child: Container(
+                  padding: EdgeInsets.only(top: size.height*.8),
+                  child: Image.asset("assets/images/pic6.png",
+                    width: size.width*.4,
+                    height: size.width*.5,
+                    ),),),
             ],
           ),
         ),
@@ -71,3 +79,4 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 }
+

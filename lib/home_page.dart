@@ -6,7 +6,7 @@ import 'radio.dart';
 import 'hadith2.dart';
 
 class HomePage extends StatefulWidget {
-  static const String routeName="/////";
+  static const String routeName="/homepage";
 
    HomePage({super.key});
 
@@ -93,13 +93,18 @@ class _HomePageState extends State<HomePage> {
                   ImageIcon(AssetImage("assets/images/home5.png")),
                   label: "Time"),
             ]),
-        body: tabs[currentIndex],
+        body: Column(
+          children: [
+            Image.asset("assets/images/pic9.png", fit: BoxFit.cover,),
+            Expanded(child: tabs[currentIndex],)
+          ],
+        )
       ),
     );
   }
   List<Widget> tabs=[
     QuranTab(),
-    HadithTab1(),
+    AhadethTab(),
     HadithTab2(),
     RadioTab(),
     TimeTab(),
